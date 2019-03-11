@@ -1,9 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr_rails";
+@import "font-awesome";
 
 body {
   font-family: 'Roboto', sans-serif;
 }
 
 @import "pages";
+
+@import "devise";

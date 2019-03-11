@@ -1,0 +1,31 @@
+.form-devise {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.btn-custom {
+  color: #f45656;
+  border: 1px solid #f45656;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  transition: background-color .3s, color .3s;
+}
+
+.btn-custom:hover {
+  background-color: #f45656;
+  color: #fff;
+}
+
+h2 {
+  font-family: 'Old Standard TT', serifs;
+  color: #f45656;
+  font-size: 25px;
+}
+
+.red-text a {
+  color: #f45656;
+}
+
+.red-text a:hover {
+  text-decoration: none;
+}

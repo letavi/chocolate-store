@@ -17,9 +17,17 @@
     </div>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Sign In</a></li>
-      <li><a href="#">Join</a></li>
-      <li><a href="#">Cart</a></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+        <li>
+          <%= link_to  root_path do %>
+            <i class="fa fa-shopping-cart"> Cart</i>
+          <% end %>
+        </li>
+      <% else %>
+        <li><%= link_to 'Sign In', login_path %></li>
+        <li><%= link_to 'Join', signup_path %></li>
+      <% end %>
     </ul>
   </div><!-- /.container -->
 </nav>
