@@ -1,0 +1,99 @@
+.navbar-default, footer {
+  background-color: #f3f2f1 !important;
+  height: 50px;
+}
+
+.navbar-brand {
+  color: #765139 !important;
+  font-size: 12px;
+}
+
+.navbar-default {
+  border-color: transparent;
+  border-radius: initial;
+}
+
+.navbar-custom {
+  background-color: #fff !important;
+}
+
+.navbar-custom ul {
+  text-transform: uppercase;
+  padding-left: 15%;
+}
+
+.navbar-custom a, .navbar-right a {
+  color: #765139 !important;
+}
+
+.navbar-custom a:hover, footer span {
+  color: #a9475b !important;
+}
+
+hr {
+  width: 90%;
+}
+
+#myCarousel img {
+  background-size: cover;
+}
+
+#myCarousel, .parent-home, #short-description {
+  margin-bottom: 20px;
+}
+
+#short-description h1 {
+  color: #5c5c5c;
+  font-family: 'Old Standard TT', serifs;
+  font-size: 40px;
+  line-height: 66px;
+  text-align: center;
+}
+
+#short-description p {
+  color: #828181;
+  text-align: justify;
+  text-indent: 30px;
+}
+
+.parent-home {
+  display: flex;
+}
+
+.child {
+  width: 57%;
+  margin-right: 20px;
+}
+
+.child img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.other-child {
+  width: 42%;
+}
+
+.other-child img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.sub-child {
+  display: flex;
+}
+
+.small-child-1 {
+  width: 40%;
+  margin-right: 13px;
+}
+
+.small-child-2 {
+  width: 57%;
+}
+
+footer p {
+  padding-top: 17px;
+}
+
+
