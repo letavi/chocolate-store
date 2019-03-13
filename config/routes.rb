@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     delete 'logout', to: 'devise/sessions#destroy'
   end
   root 'pages#home'
+  resources :products
 end
