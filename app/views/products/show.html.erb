@@ -1,2 +1,19 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="show-product">
+  <div class="product-image">
+    <%= image_tag(@product.image.url) %>
+  </div>
+
+  <div class="product-info">
+    <div align="center">
+      <h2><%= @product.name %></h2>
+      <p><strong>$<%= @product.price %></strong></p>
+      <%= link_to 'Add to Cart', root_path, class: "btn btn-custom" %>
+    </div>
+    <hr>
+    <p><%= @product.description %></p>
+    <hr>
+    <p class="red-text">
+      <%= link_to "Back To #{@product.category.name}", category_path(@product.category) %>
+    </p>
+  </div>
+</div>

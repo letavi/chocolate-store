@@ -18,10 +18,19 @@
 
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'New Category', new_category_path %></li>
+              <li><%= link_to 'New Product', new_product_path %></li>
+            </ul>
+          </li>
+        <% end %>
         <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
         <li>
           <%= link_to  root_path do %>
-            <i class="fa fa-shopping-cart"> Cart</i>
+            <i class="fa fa-shopping-cart"></i> Cart
           <% end %>
         </li>
       <% else %>
@@ -51,11 +60,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Chocolates & Gift Boxes</a></li>
-        <li><a href="#">Bars & Pantry</a></li>
-        <li><a href="#">Macarons</a></li>
-        <li><a href="#">Hot Chocolate</a></li>
-        <li><a href="#">Classes & Tastings</a></li>
+        <% Category.all.each do |category| %>
+          <li><%= link_to category.name, category_path(category) %></li>
+        <% end  %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
