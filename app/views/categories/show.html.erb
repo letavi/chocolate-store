@@ -4,7 +4,7 @@
     <%= image_tag(product.image.url) %>
       <div align="center">
         <p class="red-text"><%= link_to product.name, product_path(product) %></p>
-        <p>$<%= product.price %></p>
+        <p><%= number_to_currency(product.price) %></p>
       </div>
   </div>
   <% end %>

@@ -19,6 +19,8 @@ gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'toastr_rails', '~> 2.1', '>= 2.1.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'paperclip', '~> 6.1'
+gem 'redis', '~> 3.0.1'
+gem 'hiredis', '~> 0.4.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
