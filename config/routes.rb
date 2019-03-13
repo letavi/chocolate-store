@@ -8,8 +8,4 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :products
   resources :categories
-  resources :cart, only: [:show] do
-    put 'add/:product_id', to: 'carts#add', as: 'add_to'
-    put 'remove/:product_id', to: 'carts#remove', as: 'remove_from'
-  end
 end
