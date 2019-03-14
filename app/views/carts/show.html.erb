@@ -1,4 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <% if @cart.line_items.any? %>
+    <h2 class="text-center red-text">My Cart</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col" class="text-center">Price</th>
+          <th scope="col" class="text-center">Qty</th>
+          <th scope="col" class="text-center">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.line_items.each do |line_item| %>
+          <tr>
+            <td>
+              <%= line_item.product.name %>
+              <%= image_tag(line_item.product.image.url(:thumb) , class: "pull-right")%>
+            </td>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+            <td class="text-center"><%= number_to_currency(line_item.product.price, unit: "$") %></td>
+
+            <td class="text-center"><%= line_item.quantity.to_i %></td>
+
+            <td>
+              <%= link_to line_item, method: :delete, data: { confirm: "Are you sure? " } do %>
+                <div align="center">
+                  <i class="fa fa-minus" aria-hidden="true"></i>
+                </div>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="actions">
+      <p>Total: <%= number_to_currency(@cart.total_price) %></p>
+      <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-custom" %>
+    </div>
+  <% else %>
+    <div class="empty">
+      <h2 class="text-center">No Item in Your Cart</h2>
+    </div>
+  <% end  %>
+</div>

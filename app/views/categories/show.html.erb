@@ -1,10 +1,16 @@
 <div class="items">
   <% @category_products.each do |product| %>
   <div class="item">
-    <%= image_tag(product.image.url) %>
+    <%= link_to image_tag(product.image.url), product_path(product) %>
       <div align="center">
         <p class="red-text"><%= link_to product.name, product_path(product) %></p>
         <p><%= number_to_currency(product.price) %></p>
+        <% if user_signed_in? && current_user.admin? %>
+          <p class="red-text">
+            <%= link_to 'Edit', edit_product_path(product) %> |
+            <%= link_to 'Remove', product_path(product), method: :delete, data: { confirm: "Are you sure?" } %>
+          </p>
+        <% end %>
       </div>
   </div>
   <% end %>

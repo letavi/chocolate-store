@@ -28,15 +28,18 @@
           </li>
         <% end %>
         <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-        <li>
-          <%= link_to  root_path do %>
-            <i class="fa fa-shopping-cart"></i> Cart
-          <% end %>
-        </li>
       <% else %>
         <li><%= link_to 'Sign In', login_path %></li>
         <li><%= link_to 'Join', signup_path %></li>
       <% end %>
+      <li>
+        <% if cart_has_items %>
+          <%= link_to cart_path(@cart) do %>
+            <i class="fa fa-shopping-cart"></i> Cart
+            (<%= cart_count_over_one %>)
+          <% end %>
+        <% end %>
+      </li>
     </ul>
   </div><!-- /.container -->
 </nav>

@@ -1,18 +1,16 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  def index
-    @products = Product.all
-  end
+  before_action :authenticate_user!, except: [:index, :show]
 
   def show
   end
 
   def new
-    @product = Product.new
+    @product = current_user.products.new
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = current_user.products.new(product_params)
     if @product.save
       flash[:success] = "Product was created success!"
       redirect_to product_path(@product)
