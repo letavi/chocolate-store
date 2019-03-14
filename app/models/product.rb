@@ -3,4 +3,6 @@ class Product < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates_attachment_presence :image
   belongs_to :category
+  has_many :line_items
+  belongs_to :user
 end

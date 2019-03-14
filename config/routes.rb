@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
   devise_for :users, controllers: { registrations: 'registrations' }
   as :user do
     get 'login', to: 'devise/sessions#new'
