@@ -7,7 +7,7 @@
     <div align="center">
       <h2><%= @product.name %></h2>
       <p><strong><%= number_to_currency(@product.price) %></strong></p>
-      <%= button_to "Add to Cart", line_items_path(:product_id => @product.id), class: "btn btn-custom" %>
+      <%= button_to "Add to Cart", root_path, class: "btn btn-custom" %>
     </div>
     <hr>
     <p><%= @product.description %></p>
