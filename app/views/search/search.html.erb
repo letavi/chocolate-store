@@ -1,0 +1,54 @@
+<div class="search">
+  <h2 class="text-center">Products Search</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for search_path, method: :get do |f| %>
+        <div class="form-group">
+          <%= text_field_tag :q, params[:q], class: "form-control", placeholder: "@search" %>
+        </div>
+
+        <div class="form-group">
+          <%= submit_tag "Search", name: nil, class: "btn btn-custom" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<hr class="search">
+
+<% if @search_products.any? %>
+  <div class="container result">
+    <h2 class="text-center red-text">Result</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col" class="text-center">Price</th>
+          <th scope="col" class="text-center">Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @search_products.each do |product| %>
+          <tr>
+            <td>
+              <%= link_to product.name, product_path(product) %>
+            </td>
+            <td class="text-center"><%= number_to_currency(product.price, unit: "$") %></td>
+
+            <td><%= truncate(product.description, length: 80) %></td>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div class="result-empty">
+    <h2 class="text-center">Sorry, No Found</h2>
+  </div>
+<% end  %>
+
+

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   root 'pages#home'
   resources :products
   resources :categories
+  get 'search', to: 'search#search'
 end

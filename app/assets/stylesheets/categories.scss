@@ -1,9 +1,14 @@
+.form-category {
+  margin-bottom: 135px;
+}
+
 .items {
   overflow: hidden; /* simple clearfix */
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 20px;
 }
+
 .items .item {
   float: left;
   width: 25%;
@@ -19,7 +24,4 @@
 .item img {
   width: 100%;
   height: 100%;
-}
-
-.item {
 }

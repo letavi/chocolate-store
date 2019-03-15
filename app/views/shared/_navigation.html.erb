@@ -9,11 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <p class="navbar-brand">Hand crafted chocolates, macarons & ice cream</p>
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-      </form>
+     <%= button_tag(link_to("Search", search_path), class: "btn btn-search") %>
     </div>
 
     <ul class="nav navbar-nav navbar-right">
