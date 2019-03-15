@@ -34,7 +34,7 @@
         <% @search_products.each do |product| %>
           <tr>
             <td>
-              <%= link_to product.name, product_path(product) %>
+              <%= link_to product.name, controller: "products", action: "show", id: product.id %>
             </td>
             <td class="text-center"><%= number_to_currency(product.price, unit: "$") %></td>
 
