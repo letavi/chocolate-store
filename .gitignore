@@ -31,3 +31,6 @@
 
 # Ignore for upload image to github
 public/system/products/images/
+
+# Ignore application configuration
+/config/application.yml

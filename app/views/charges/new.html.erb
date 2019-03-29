@@ -1,0 +1,21 @@
+<div align="center" class="form-charge">
+  <%= form_tag charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Total: <%= number_to_currency(@cart.total_price) %></span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Chocolate Store Payment"
+            data-label="Pay with Card"
+            data-locale="auto"></script>
+  <% end %>
+</div>
+

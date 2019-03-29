@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require toastr_rails
+//= require fullpage
 //= require activestorage
 //= require_tree .

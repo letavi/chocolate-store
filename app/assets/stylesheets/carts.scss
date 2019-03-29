@@ -6,3 +6,22 @@
 .empty {
   margin-bottom:230px;
 }
+
+.btn-pay:link,
+.btn-pay:visited {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #f45656;
+  padding: 6px 41px;
+  margin-top: 15px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-pay:hover,
+.btn-pay:active {
+  color: #f45656;
+  border: 1px solid #f45656;
+  background-color: #fff;
+}
+
+

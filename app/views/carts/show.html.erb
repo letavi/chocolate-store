@@ -36,8 +36,8 @@
 
     <div class="actions">
       <p>Total: <%= number_to_currency(@cart.total_price) %></p>
-      <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-custom" %>
-    </div>
+        <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-custom" %>
+        <%= link_to 'Pay', new_charge_path, class: "btn btn-pay" %>
   <% else %>
     <div class="empty">
       <h2 class="text-center">No Item in Your Cart</h2>
