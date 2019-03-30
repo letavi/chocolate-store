@@ -32,9 +32,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @category = @product.category
     @product.destroy
     flash[:danger] = "Product was removed success!"
-    redirect_to products_path
+    redirect_to @category
   end
 
   private
